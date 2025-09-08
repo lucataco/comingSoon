@@ -29,14 +29,11 @@
 		&:before {
 			@include vendor('transition', 'background-color #{_duration(bg)} ease-in-out');
 			@include vendor('transition-delay', '#{_duration(intro)}');
-			background-image:		linear-gradient(to top, #{_palette(bg-overlay)}, #{_palette(bg-overlay)}),
-									url('../../images/overlay.png');
-			background-size:		auto,
-									256px 256px;
-			background-position:	center,
-									center;
-			background-repeat:		no-repeat,
-									repeat;
+			/* Removed overlay.png to save an extra request */
+			background-image:		linear-gradient(to top, #{_palette(bg-overlay)}, #{_palette(bg-overlay)});
+			background-size:		auto;
+			background-position:	center;
+			background-repeat:		no-repeat;
 			z-index: 2;
 		}
 
@@ -46,7 +43,12 @@
 				'transform #{_duration(article)} ease-in-out',
 				'filter #{_duration(article)} ease-in-out'
 			));
+			/* JPEG fallback first, then image-set so capable browsers use WebP */
 			background-image:		url('../../images/bg.jpg');
+			background-image:		image-set(
+				url('../../images/bg.webp') type('image/webp'),
+				url('../../images/bg.jpg') type('image/jpeg')
+			);
 			background-position:	center;
 			background-size:		cover;
 			background-repeat:		no-repeat;
