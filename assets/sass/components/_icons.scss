@@ -27,6 +27,7 @@
 				line-height: 2.25rem;
 				text-align: center;
 				width: 2.25rem;
+				border-bottom: none;
 
 				&:hover {
 					background-color: _palette(border-bg);
@@ -37,4 +38,13 @@
 				}
 			}
 		}
+	}
+
+/* SVG Icons */
+
+	.icon-svg {
+		width: 1em;
+		height: 1em;
+		fill: currentColor;
+		vertical-align: middle;
 	}

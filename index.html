@@ -4,23 +4,49 @@
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
-<html>
+<html lang="en">
   <head>
     <title>Coming Soon</title>
     <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, user-scalable=no"
-    />
-    <!-- Preconnect for faster Google Fonts fetch (moved out of CSS) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="description" content="Coming soon - Something cool is headed your way" />
+
+    <!-- Preconnect for faster Google Fonts fetch -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;600&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <noscript><link rel="stylesheet" href="assets/css/noscript.css"/></noscript>
+    <!-- Preload background image - smallest size for faster initial load -->
+    <link rel="preload" as="image" href="images/bg-640.jpg" media="(max-width: 736px)">
+    <link rel="preload" as="image" href="images/bg-1024.jpg" media="(min-width: 737px) and (max-width: 1280px)">
+    <link rel="preload" as="image" href="images/bg-1920.jpg" media="(min-width: 1281px)">
+
+    <!-- Critical CSS inlined for faster FCP/LCP -->
+    <style>
+      html{box-sizing:border-box;font-size:16pt}*,*:before,*:after{box-sizing:inherit}body{background:#1b1f22;color:#fff;font-family:"Source Sans Pro",sans-serif;font-weight:300;font-size:1rem;line-height:1.65;margin:0;padding:0}body.is-preload *,body.is-preload *:before,body.is-preload *:after{animation:none!important;transition:none!important}h1{color:#fff;font-weight:600;line-height:1.3;margin:0 0 1rem;text-transform:uppercase;letter-spacing:.5rem;font-size:2.25rem}p{margin:0 0 2rem}a{border-bottom:dotted 1px hsla(0,0%,100%,.5);text-decoration:none;color:inherit;transition:color .2s ease-in-out,background-color .2s ease-in-out,border-bottom-color .2s ease-in-out}a:hover{border-bottom-color:transparent}#bg{transform:scale(1);-webkit-backface-visibility:hidden;position:fixed;top:0;left:0;width:100%;height:100vh;z-index:1}#bg:before,#bg:after{content:"";display:block;position:absolute;top:0;left:0;width:100%;height:100%}#bg:before{transition:background-color 2.5s ease-in-out;transition-delay:.75s;background-image:linear-gradient(to top,rgba(19,21,25,.5),rgba(19,21,25,.5));background-size:auto;background-position:center;background-repeat:no-repeat;z-index:2}#bg:after{transform:scale(1.125);transition:transform .325s ease-in-out,filter .325s ease-in-out;background-image:url("images/bg-640.jpg");background-position:center;background-size:cover;background-repeat:no-repeat;z-index:1}body.is-preload #bg:before{background-color:#000}#wrapper{display:flex;flex-direction:column;align-items:center;justify-content:space-between;position:relative;min-height:100vh;width:100%;padding:4rem 2rem;z-index:3}#wrapper:before{content:"";display:block}#header{display:flex;flex-direction:column;align-items:center;transition:transform .325s ease-in-out,filter .325s ease-in-out,opacity .325s ease-in-out;background-image:radial-gradient(rgba(0,0,0,.25) 25%,transparent 55%);max-width:100%;text-align:center}#header>*{transition:opacity .325s ease-in-out;position:relative;margin-top:3.5rem}#header>*:before{content:"";display:block;position:absolute;top:calc(-3.5rem - 1px);left:calc(50% - 1px);width:1px;height:calc(3.5rem + 1px);background:#fff}#header>:first-child{margin-top:0}#header>:first-child:before{display:none}#header .content{border-style:solid;border-color:#fff;border-top-width:1px;border-bottom-width:1px;max-width:100%}#header .content .inner{transition:max-height .75s ease,padding .75s ease,opacity .325s ease-in-out;transition-delay:.25s;padding:3rem 2rem;max-height:40rem;overflow:hidden}#header .content .inner>:last-child{margin-bottom:0}#header .content p{text-transform:uppercase;letter-spacing:.2rem;font-size:.8rem;line-height:2}body.is-preload #header>*{opacity:0}body.is-preload #header{filter:blur(.125rem)}body.is-preload #header .content .inner{max-height:0;padding-top:0;padding-bottom:0;opacity:0}#footer{transition:transform .325s ease-in-out,filter .325s ease-in-out,opacity .325s ease-in-out;width:100%;max-width:100%;margin-top:2rem;text-align:center}#footer .copyright{letter-spacing:.2rem;font-size:.6rem;opacity:.75;margin-bottom:0;text-transform:uppercase}body.is-preload #footer{opacity:0}#main{display:none}.icon-svg{width:1em;height:1em;fill:currentColor;vertical-align:middle}@media screen and (min-width:737px){#bg:after{background-image:url("images/bg-1024.jpg")}}@media screen and (min-width:1281px){#bg:after{background-image:url("images/bg-1920.jpg")}}@media screen and (max-width:1680px){html{font-size:12pt}#wrapper{padding:3rem 2rem}}@media screen and (max-width:736px){html{font-size:11pt}#wrapper{padding:2rem 1rem}h1{font-size:1.75rem;line-height:1.4}#header>*{margin-top:2rem}#header>*:before{top:calc(-2rem - 1px);height:calc(2rem + 1px)}#header .content .inner{padding:2.5rem 1rem}#header .content p{line-height:1.875}}@media screen and (max-width:480px){#wrapper{padding:1rem}#header{padding:1.5rem 0}#header .content .inner{padding:2.5rem 0}}@media screen and (max-width:360px){html{font-size:10pt}}
+    </style>
+
+    <!-- Async load main CSS -->
+    <link rel="preload" href="assets/css/main.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="assets/css/main.css"/><link rel="stylesheet" href="assets/css/noscript.css"/></noscript>
   </head>
   <body class="is-preload">
+    <!-- SVG Sprite for social icons -->
+    <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+      <symbol id="icon-twitter" viewBox="0 0 512 512">
+        <path fill="currentColor" d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/>
+      </symbol>
+      <symbol id="icon-facebook" viewBox="0 0 320 512">
+        <path fill="currentColor" d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"/>
+      </symbol>
+      <symbol id="icon-instagram" viewBox="0 0 448 512">
+        <path fill="currentColor" d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/>
+      </symbol>
+      <symbol id="icon-github" viewBox="0 0 496 512">
+        <path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/>
+      </symbol>
+    </svg>
+
     <!-- Wrapper -->
     <div id="wrapper">
       <!-- Header -->
@@ -124,333 +150,18 @@
           </form>
           <ul class="icons">
             <li>
-              <a href="#" class="icon brands fa-twitter"
-                ><span class="label">Twitter</span></a
-              >
+              <a href="#" aria-label="Twitter"><svg class="icon-svg"><use href="#icon-twitter"/></svg></a>
             </li>
             <li>
-              <a href="#" class="icon brands fa-facebook-f"
-                ><span class="label">Facebook</span></a
-              >
+              <a href="#" aria-label="Facebook"><svg class="icon-svg"><use href="#icon-facebook"/></svg></a>
             </li>
             <li>
-              <a href="#" class="icon brands fa-instagram"
-                ><span class="label">Instagram</span></a
-              >
+              <a href="#" aria-label="Instagram"><svg class="icon-svg"><use href="#icon-instagram"/></svg></a>
             </li>
             <li>
-              <a href="#" class="icon brands fa-github"
-                ><span class="label">GitHub</span></a
-              >
+              <a href="#" aria-label="GitHub"><svg class="icon-svg"><use href="#icon-github"/></svg></a>
             </li>
           </ul>
-        </article>
-
-        <!-- Elements -->
-        <article id="elements">
-          <h2 class="major">Elements</h2>
-
-          <section>
-            <h3 class="major">Text</h3>
-            <p>
-              This is <b>bold</b> and this is <strong>strong</strong>. This is
-              <i>italic</i> and this is <em>emphasized</em>. This is
-              <sup>superscript</sup> text and this is <sub>subscript</sub> text.
-              This is <u>underlined</u> and this is code:
-              <code>for (;;) { ... }</code>. Finally,
-              <a href="#">this is a link</a>.
-            </p>
-            <hr />
-            <h2>Heading Level 2</h2>
-            <h3>Heading Level 3</h3>
-            <h4>Heading Level 4</h4>
-            <h5>Heading Level 5</h5>
-            <h6>Heading Level 6</h6>
-            <hr />
-            <h4>Blockquote</h4>
-            <blockquote>
-              Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis
-              sagittis eget tempus euismod. Vestibulum ante ipsum primis in
-              faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat
-              ac adipiscing accumsan faucibus. Vestibulum ante ipsum primis in
-              faucibus lorem ipsum dolor sit amet nullam adipiscing eu felis.
-            </blockquote>
-            <h4>Preformatted</h4>
-            <pre><code>i = 0;
-
-while (!deck.isInOrder()) {
-    print 'Iteration ' + i;
-    deck.shuffle();
-    i++;
-}
-
-print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
-          </section>
-
-          <section>
-            <h3 class="major">Lists</h3>
-
-            <h4>Unordered</h4>
-            <ul>
-              <li>Dolor pulvinar etiam.</li>
-              <li>Sagittis adipiscing.</li>
-              <li>Felis enim feugiat.</li>
-            </ul>
-
-            <h4>Alternate</h4>
-            <ul class="alt">
-              <li>Dolor pulvinar etiam.</li>
-              <li>Sagittis adipiscing.</li>
-              <li>Felis enim feugiat.</li>
-            </ul>
-
-            <h4>Ordered</h4>
-            <ol>
-              <li>Dolor pulvinar etiam.</li>
-              <li>Etiam vel felis viverra.</li>
-              <li>Felis enim feugiat.</li>
-              <li>Dolor pulvinar etiam.</li>
-              <li>Etiam vel felis lorem.</li>
-              <li>Felis enim et feugiat.</li>
-            </ol>
-            <h4>Icons</h4>
-            <ul class="icons">
-              <li>
-                <a href="#" class="icon brands fa-twitter"
-                  ><span class="label">Twitter</span></a
-                >
-              </li>
-              <li>
-                <a href="#" class="icon brands fa-facebook-f"
-                  ><span class="label">Facebook</span></a
-                >
-              </li>
-              <li>
-                <a href="#" class="icon brands fa-instagram"
-                  ><span class="label">Instagram</span></a
-                >
-              </li>
-              <li>
-                <a href="#" class="icon brands fa-github"
-                  ><span class="label">Github</span></a
-                >
-              </li>
-            </ul>
-
-            <h4>Actions</h4>
-            <ul class="actions">
-              <li><a href="#" class="button primary">Default</a></li>
-              <li><a href="#" class="button">Default</a></li>
-            </ul>
-            <ul class="actions stacked">
-              <li><a href="#" class="button primary">Default</a></li>
-              <li><a href="#" class="button">Default</a></li>
-            </ul>
-          </section>
-
-          <section>
-            <h3 class="major">Table</h3>
-            <h4>Default</h4>
-            <div class="table-wrapper">
-              <table>
-                <thead>
-                  <tr>
-                    <th>Name</th>
-                    <th>Description</th>
-                    <th>Price</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Item One</td>
-                    <td>Ante turpis integer aliquet porttitor.</td>
-                    <td>29.99</td>
-                  </tr>
-                  <tr>
-                    <td>Item Two</td>
-                    <td>Vis ac commodo adipiscing arcu aliquet.</td>
-                    <td>19.99</td>
-                  </tr>
-                  <tr>
-                    <td>Item Three</td>
-                    <td>Morbi faucibus arcu accumsan lorem.</td>
-                    <td>29.99</td>
-                  </tr>
-                  <tr>
-                    <td>Item Four</td>
-                    <td>Vitae integer tempus condimentum.</td>
-                    <td>19.99</td>
-                  </tr>
-                  <tr>
-                    <td>Item Five</td>
-                    <td>Ante turpis integer aliquet porttitor.</td>
-                    <td>29.99</td>
-                  </tr>
-                </tbody>
-                <tfoot>
-                  <tr>
-                    <td colspan="2"></td>
-                    <td>100.00</td>
-                  </tr>
-                </tfoot>
-              </table>
-            </div>
-
-            <h4>Alternate</h4>
-            <div class="table-wrapper">
-              <table class="alt">
-                <thead>
-                  <tr>
-                    <th>Name</th>
-                    <th>Description</th>
-                    <th>Price</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Item One</td>
-                    <td>Ante turpis integer aliquet porttitor.</td>
-                    <td>29.99</td>
-                  </tr>
-                  <tr>
-                    <td>Item Two</td>
-                    <td>Vis ac commodo adipiscing arcu aliquet.</td>
-                    <td>19.99</td>
-                  </tr>
-                  <tr>
-                    <td>Item Three</td>
-                    <td>Morbi faucibus arcu accumsan lorem.</td>
-                    <td>29.99</td>
-                  </tr>
-                  <tr>
-                    <td>Item Four</td>
-                    <td>Vitae integer tempus condimentum.</td>
-                    <td>19.99</td>
-                  </tr>
-                  <tr>
-                    <td>Item Five</td>
-                    <td>Ante turpis integer aliquet porttitor.</td>
-                    <td>29.99</td>
-                  </tr>
-                </tbody>
-                <tfoot>
-                  <tr>
-                    <td colspan="2"></td>
-                    <td>100.00</td>
-                  </tr>
-                </tfoot>
-              </table>
-            </div>
-          </section>
-
-          <section>
-            <h3 class="major">Buttons</h3>
-            <ul class="actions">
-              <li><a href="#" class="button primary">Primary</a></li>
-              <li><a href="#" class="button">Default</a></li>
-            </ul>
-            <ul class="actions">
-              <li><a href="#" class="button">Default</a></li>
-              <li><a href="#" class="button small">Small</a></li>
-            </ul>
-            <ul class="actions">
-              <li>
-                <a href="#" class="button primary icon solid fa-download"
-                  >Icon</a
-                >
-              </li>
-              <li>
-                <a href="#" class="button icon solid fa-download">Icon</a>
-              </li>
-            </ul>
-            <ul class="actions">
-              <li><span class="button primary disabled">Disabled</span></li>
-              <li><span class="button disabled">Disabled</span></li>
-            </ul>
-          </section>
-
-          <section>
-            <h3 class="major">Form</h3>
-            <form method="post" action="#">
-              <div class="fields">
-                <div class="field half">
-                  <label for="demo-name">Name</label>
-                  <input
-                    type="text"
-                    name="demo-name"
-                    id="demo-name"
-                    value=""
-                    placeholder="Jane Doe"
-                  />
-                </div>
-                <div class="field half">
-                  <label for="demo-email">Email</label>
-                  <input
-                    type="email"
-                    name="demo-email"
-                    id="demo-email"
-                    value=""
-                    placeholder="jane@untitled.tld"
-                  />
-                </div>
-                <div class="field">
-                  <label for="demo-category">Category</label>
-                  <select name="demo-category" id="demo-category">
-                    <option value="">-</option>
-                    <option value="1">Manufacturing</option>
-                    <option value="1">Shipping</option>
-                    <option value="1">Administration</option>
-                    <option value="1">Human Resources</option>
-                  </select>
-                </div>
-                <div class="field half">
-                  <input
-                    type="radio"
-                    id="demo-priority-low"
-                    name="demo-priority"
-                    checked
-                  />
-                  <label for="demo-priority-low">Low</label>
-                </div>
-                <div class="field half">
-                  <input
-                    type="radio"
-                    id="demo-priority-high"
-                    name="demo-priority"
-                  />
-                  <label for="demo-priority-high">High</label>
-                </div>
-                <div class="field half">
-                  <input type="checkbox" id="demo-copy" name="demo-copy" />
-                  <label for="demo-copy">Email me a copy</label>
-                </div>
-                <div class="field half">
-                  <input
-                    type="checkbox"
-                    id="demo-human"
-                    name="demo-human"
-                    checked
-                  />
-                  <label for="demo-human">Not a robot</label>
-                </div>
-                <div class="field">
-                  <label for="demo-message">Message</label>
-                  <textarea
-                    name="demo-message"
-                    id="demo-message"
-                    placeholder="Enter your message"
-                    rows="6"
-                  ></textarea>
-                </div>
-              </div>
-              <ul class="actions">
-                <li>
-                  <input type="submit" value="Send Message" class="primary" />
-                </li>
-                <li><input type="reset" value="Reset" /></li>
-              </ul>
-            </form>
-          </section>
         </article>
       </div>
 
@@ -476,10 +187,8 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
     <div id="bg"></div>
 
     <!-- Scripts -->
-    <script defer src="assets/js/jquery.min.js"></script>
     <script defer src="assets/js/browser.min.js"></script>
     <script defer src="assets/js/breakpoints.min.js"></script>
-    <script defer src="assets/js/util.js"></script>
-    <script defer src="assets/js/main.js"></script>
+    <script defer src="assets/js/main-vanilla.js"></script>
   </body>
 </html>

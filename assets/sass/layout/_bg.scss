@@ -43,16 +43,31 @@
 				'transform #{_duration(article)} ease-in-out',
 				'filter #{_duration(article)} ease-in-out'
 			));
-			/* JPEG fallback first, then image-set so capable browsers use WebP */
-			background-image:		url('../../images/bg.jpg');
-			background-image:		image-set(
-				url('../../images/bg.webp') type('image/webp'),
-				url('../../images/bg.jpg') type('image/jpeg')
-			);
+			/* Responsive background images - smallest first for mobile */
+			background-image:		url('../../images/bg-640.jpg');
 			background-position:	center;
 			background-size:		cover;
 			background-repeat:		no-repeat;
 			z-index: 1;
+
+			/* Tablet and up */
+			@media screen and (min-width: 737px) {
+				background-image: url('../../images/bg-1024.jpg');
+			}
+
+			/* Desktop and up */
+			@media screen and (min-width: 1281px) {
+				background-image: url('../../images/bg-1920.jpg');
+			}
+
+			/* Large desktop - use high-res WebP with JPEG fallback */
+			@media screen and (min-width: 1921px) {
+				background-image: url('../../images/bg.jpg');
+				background-image: image-set(
+					url('../../images/bg.webp') type('image/webp'),
+					url('../../images/bg.jpg') type('image/jpeg')
+				);
+			}
 		}
 
 		body.is-article-visible & {
